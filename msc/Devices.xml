@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<st3:devices xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:st3="http://knure.kharkov.ua/jt/SummaryTask3" 
+	xsi:schemaLocation="http://knure.kharkov.ua/jt/SummaryTask3 Devices.xsd">
+	<device>
+		<Name>Device 1</Name>
+		<Origin>Germany</Origin>
+		<Price>2000</Price>
+		<Types>
+			<ports>
+				<port>COM</port>
+				<port>USB</port>
+				<port>LPT</port>
+			</ports>
+			<peripheral status="Yes" />
+			<energyConsumption>600</energyConsumption>
+			<cooler provided="Yes" />
+			<group>
+				<ioDevice provided="Yes" />
+				<multimediaDevice provided="Yes" />
+			</group>
+		</Types>
+		<Critical>Yes</Critical>
+	</device>
+	<device>
+		<Name>Device 2</Name>
+		<Origin>France</Origin>
+		<Price>400</Price>
+		<Types>
+			<ports>
+				<port>COM</port>
+			</ports>
+			<peripheral status="Yes" />
+			<energyConsumption>220</energyConsumption>
+			<cooler provided="No" />
+			<group>
+				<ioDevice provided="No" />
+				<multimediaDevice provided="No" />
+			</group>
+		</Types>
+		<Critical>No</Critical>
+	</device>
+	<device>
+		<Name>Device 3</Name>
+		<Origin>USA</Origin>
+		<Price>800</Price>
+		<Types>
+			<ports>
+				<port>USB</port>
+				<port>LPT</port>
+			</ports>
+			<peripheral status="No" />
+			<energyConsumption>800</energyConsumption>
+			<cooler provided="Yes" />
+			<group>
+				<ioDevice provided="Yes" />
+				<multimediaDevice provided="No" />
+			</group>
+		</Types>
+		<Critical>Yes</Critical>
+	</device>
+	<device>
+		<Name>Device 4</Name>
+		<Origin>China</Origin>
+		<Price>400</Price>
+		<Types>
+			<ports>
+				<port>COM</port>
+				<port>USB</port>
+				<port>LPT</port>
+			</ports>
+			<peripheral status="Yes" />
+			<energyConsumption>700</energyConsumption>
+			<cooler provided="No" />
+			<group>
+				<ioDevice provided="Yes" />
+				<multimediaDevice provided="No" />
+			</group>
+		</Types>
+		<Critical>No</Critical>
+	</device>
+</st3:devices>

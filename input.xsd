@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- XML schema -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+targetNamespace="http://nure.ua/hasan/SummaryTask3/entity"
+	xmlns:tns="http://nure.ua/hasan/SummaryTask3/entity">
+	<xsd:element name="devices">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="device" type="tns:Device" minOccurs="1"
+					maxOccurs="unbounded" />
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:complexType name="Device">
+		<xsd:sequence>
+			<xsd:element name="Name" type="xsd:string" minOccurs="1" maxOccurs="1" />
+			<xsd:element name="Origin" type="xsd:string" minOccurs="1" maxOccurs="1" />
+			<xsd:element name="Price" type="tns:Price" minOccurs="1"
+				maxOccurs="1" />
+			<xsd:element name="Types" type="tns:Types" minOccurs="1"
+				maxOccurs="1" />
+			<xsd:element name="Critical" type="tns:Status" minOccurs="1"
+				maxOccurs="1" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="Price">
+		<xsd:restriction base="xsd:nonNegativeInteger">
+			<xsd:minInclusive value="0" />
+			<xsd:maxInclusive value="10000" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="Types">
+		<xsd:all>
+			<xsd:element name="ports" type="tns:Ports" minOccurs="0"
+				maxOccurs="1" />
+			<xsd:element name="peripheral" type="tns:TypesStatus" minOccurs="0"
+				maxOccurs="1" />
+			<xsd:element name="energyConsumption" type="xsd:nonNegativeInteger" minOccurs="0"
+				maxOccurs="1" />
+			<xsd:element name="cooler" type="tns:Provided" minOccurs="0"
+				maxOccurs="1" />
+			<xsd:element name="group" type="tns:Group" minOccurs="0"
+				maxOccurs="1" />
+		</xsd:all>
+	</xsd:complexType>
+	<xsd:complexType name="Group">
+		<xsd:sequence>
+			<xsd:element name="ioDevice" type="tns:Provided" maxOccurs="1" />
+			<xsd:element name="multimediaDevice" type="tns:Provided"
+				maxOccurs="1" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="Provided">
+		<xsd:attribute name="provided" type="tns:ProvidedStatus" use="required" />
+	</xsd:complexType>
+	<xsd:complexType name="TypesStatus">
+		<xsd:attribute name="status" type="tns:Status" use="required" />
+	</xsd:complexType>
+	<xsd:complexType name="Ports">
+		<xsd:sequence>
+			<xsd:element name="port" minOccurs="1" maxOccurs="3" type="tns:Port" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="Port">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="COM" />
+			<xsd:enumeration value="USB" />
+			<xsd:enumeration value="LPT" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="Status">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Yes" />
+			<xsd:enumeration value="No" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ProvidedStatus">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Yes" />
+			<xsd:enumeration value="No" />
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:schema>
